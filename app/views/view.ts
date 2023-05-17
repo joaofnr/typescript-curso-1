@@ -4,8 +4,8 @@ export abstract class View<T> {
     private escapar = false;
 
     constructor(seletor: string, escapar?: boolean) {
-        this.escapar = escapar
-        this.elemento = document.querySelector(seletor);
+        this.escapar = <boolean>escapar
+        this.elemento = <HTMLInputElement>document.querySelector(seletor);
     }
 
     public update(model: T): void {
